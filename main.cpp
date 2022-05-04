@@ -1,3 +1,5 @@
+// Mateusz Wabinski_2_rok_4_semestr_nr_indeksu_146326_Grupa_D1
+
 #include <chrono>
 #include <fstream>
 #include <iostream>
@@ -16,6 +18,7 @@ int main(int argc, char *argv[]) {
         cerr << "expected two arguments: [FILE 1] [FILE 2]\n";
         return 1;
     }
+    
 
     ifstream file1(argv[1]);
     if (file1.is_open() == 0) {
@@ -37,6 +40,7 @@ int main(int argc, char *argv[]) {
     while (file1 >> c1 && file2 >> c2) {
         total_error += bit_error(c1, c2);
     }
+    
 
     file1.clear();
     file2.clear();
@@ -67,6 +71,7 @@ int main(int argc, char *argv[]) {
         cerr << "cannot open log file\n";
         return 3;
     }
+    
 
     std::time_t current_time = std::chrono::system_clock::to_time_t(end);
     log_file << std::ctime(&current_time);
